@@ -1,0 +1,17 @@
+.header{
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+.header__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+@media all and (max-width: 920px) {
+    .header__logo {
+        width: 124px;
+    }
+}

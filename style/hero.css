@@ -1,0 +1,145 @@
+.hero {
+    padding-top: 0;
+    overflow: hidden;
+}
+
+.hero__container {
+    position: relative;
+    display: flex;
+    gap: var(--gap);
+}
+
+.hero__content {
+    width: var(--width-block);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.hero__slider-block {
+    position: absolute;
+    left: calc(var(--width-block) + var(--gap) / 2);
+    width: calc(((var(--width-block) + var(--gap)) * 2) - var(--gap));
+    height: 100%;
+}
+
+.hero__title {
+    margin-bottom: 32px;
+}
+
+.hero__description {
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 32px;
+    flex-grow: 1;
+}
+
+.hero__link {
+    text-decoration: none;
+}
+
+.hero__image {
+    width: var(--width-slide);
+    max-width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+}
+
+.hero__slider {
+    position: relative;
+    height: 100%;
+}
+
+.hero__arrow {
+    position: absolute;
+    bottom: var(--padding);
+    left: calc(var(--width-slide) - var(--padding));
+    transform: translateX(-100%);
+    display: flex;
+    gap: 8px;
+    z-index: 3;
+}
+
+.hero__slider-btn {
+    display: block;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #FFC700 url('../images/arrow_right.svg') no-repeat center/12px;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.hero__slider-btn:hover {
+    background-color: #FFD952;
+}
+
+.hero__slider-btn:active {
+    background-color: #b79310;
+}
+
+.hero__slider-btn-btn_prev {
+    transform: rotate(180deg);
+}
+
+.hero__slider-btn-btn_next {
+    padding: 0;
+}
+
+@media all and (max-width: 1240px) {
+    .hero__title {
+        margin-bottom: 24px;
+    }
+
+    .hero__description {
+        margin-bottom: 98px;
+    }
+}
+
+@media all and (max-width: 920px) {
+    .hero__container {
+        flex-direction: column;
+    }
+
+    .hero__content {
+        width: 100%;
+    }
+
+    .hero__slider-block {
+        position: static;
+        height: 280px;
+    }
+
+    .hero__title {
+        margin-bottom: 16px;
+        max-width: 410px;
+    }
+
+    .hero__description {
+        margin-bottom: 50px;
+        max-width: 410px;
+        font-size: 14px;
+    }
+
+    .hero__arrow {
+        left: auto;
+        right: var(--padding);
+        transform: none;
+    }
+}
+
+@media all and (max-width: 560px) {
+    .hero__description {
+        margin-bottom: 24px;
+        font-size: 12px;
+    }
+
+    .hero__slider-block {
+        max-width: var(--width-slide);
+        margin: 0 auto;
+    }
+}
